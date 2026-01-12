@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "CWCS-Slides-Fix",
+  "version": "1.0",
+  "description": "Blocks Google Slides/Docs picker requests to prevent inserting videos or Drive files.",
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "https://docs.google.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "block_picker_docs",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}
