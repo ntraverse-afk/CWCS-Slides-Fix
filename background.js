@@ -5,7 +5,6 @@ chrome.webRequest.onBeforeRequest.addListener(
       return;
     }
 
-    // Only apply to requests initiated by Google Docs or Slides.
     const allowedInitiators = [
       "https://docs.google.com",
       "https://slides.google.com"
@@ -22,7 +21,6 @@ chrome.webRequest.onBeforeRequest.addListener(
       .join("");
 
     if (body.includes("punch-insert-video")) {
-      console.log("CWCS-Slides-Fix: Blocked YouTube video picker.");
       return { cancel: true };
     }
   },
